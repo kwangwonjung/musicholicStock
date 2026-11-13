@@ -75,7 +75,8 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
 
   return (
     <div className="min-h-screen bg-[#f4f7fb] flex items-center justify-center p-4 font-sans">
-      <div className="w-full max-w-105px bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 p-6 sm:p-8">
+      {/* max-w-[420px]를 적용하여 카드가 너무 퍼지지 않고 깔끔한 너비를 유지하도록 수정 */}
+      <div className="w-full max-w-[420px] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 p-6 sm:p-8">
         
         {/* 상단 로고 및 타이틀 영역 */}
         <div className="flex flex-col items-center text-center mb-6">
