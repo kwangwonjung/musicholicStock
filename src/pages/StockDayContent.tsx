@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Plus, Save, ChevronDown } from 'lucide-react';
+import { Save, ChevronDown } from 'lucide-react';
 
 export default function StockDayContent() {
   const [selectedStockIdx, setSelectedStockIdx] = useState(3); // 기본 선택된 종목 (맥쿼리인프라 예시)
@@ -66,7 +66,7 @@ export default function StockDayContent() {
   return (
     <div className="flex-1 min-w-0 flex flex-col overflow-hidden bg-white">
       
-      {/* 상단 검색 및 액션 버튼 컨트롤 바 (생성기간 + 상단 왼쪽으로 이동한 버튼 3개) */}
+      {/* 상단 검색 및 액션 버튼 컨트롤 바 */}
       <div className="px-6 py-3 border-b border-slate-200 flex items-center justify-between flex-wrap gap-4 text-xs bg-white shrink-0">
         <div className="flex items-center gap-4 flex-wrap">
           {/* 생성기간 */}
@@ -83,15 +83,15 @@ export default function StockDayContent() {
             </div>
           </div>
 
-          {/* 상단 왼쪽으로 이동된 데이터 생성 관련 버튼 3개 (모두 녹색 테마) */}
+          {/* 상단 생성 버튼 3개 (조회 버튼과 동일한 패딩/폰트 스타일 적용) */}
           <div className="flex items-center gap-2">
-            <button className="flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded font-semibold cursor-pointer shadow-xs transition-colors">
-              <Plus className="w-3.5 h-3.5 text-white" /> 생성
+            <button className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-1.5 rounded-lg shadow-xs transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+              생성
             </button>
-            <button className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded font-semibold cursor-pointer shadow-xs transition-colors">
+            <button className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-1.5 rounded-lg shadow-xs transition-colors whitespace-nowrap shrink-0 cursor-pointer">
               50일선 생성
             </button>
-            <button className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded font-semibold cursor-pointer shadow-xs transition-colors">
+            <button className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-1.5 rounded-lg shadow-xs transition-colors whitespace-nowrap shrink-0 cursor-pointer">
               배당 데이터 생성
             </button>
           </div>
@@ -111,15 +111,15 @@ export default function StockDayContent() {
               <span className="font-semibold text-slate-700">종목코드/명</span>
               <input
                 type="text"
-                className="border border-slate-300 rounded px-3 py-1 w-48 bg-white focus:outline-none focus:border-blue-500 shadow-2xs"
+                className="border border-slate-300 rounded px-3 py-1.5 w-48 bg-white focus:outline-none focus:border-blue-500 shadow-2xs text-xs"
               />
-              <button className="flex items-center gap-1.5 px-4 py-1 bg-[#0066e6] hover:bg-[#0055c2] text-white rounded font-semibold cursor-pointer shadow-xs transition-colors">
-                <Search className="w-3.5 h-3.5 text-white" /> 조회
+              <button className="bg-[#0066e6] hover:bg-[#0055c2] text-white text-xs font-semibold px-4 py-1.5 rounded-lg shadow-xs transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+                조회
               </button>
             </div>
 
-            {/* 저장 버튼 */}
-            <button className="flex items-center gap-1.5 px-6 py-1 bg-[#0066e6] hover:bg-[#0055c2] text-white rounded font-semibold text-xs cursor-pointer shadow-xs transition-colors">
+            {/* 저장 버튼 (동일한 스타일 적용) */}
+            <button className="bg-[#0066e6] hover:bg-[#0055c2] text-white text-xs font-semibold px-5 py-1.5 rounded-lg shadow-xs transition-colors whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5">
               <Save className="w-3.5 h-3.5 text-white" /> 저장
             </button>
           </div>
@@ -178,9 +178,9 @@ export default function StockDayContent() {
         {/* 우측 배당 상세 내역 그리드 영역 */}
         <div className="w-130 flex flex-col overflow-hidden bg-white">
           
-          {/* 우측 상단 저장 버튼 바 (좌측과 동일한 높이 및 디자인) */}
-          <div className="px-3 py-2 bg-[#f8fafc] border-b border-slate-300 flex justify-end shrink-0">
-            <button className="flex items-center gap-1.5 px-6 py-1 bg-[#0066e6] hover:bg-[#0055c2] text-white rounded font-semibold text-xs cursor-pointer shadow-xs transition-colors">
+          {/* 우측 상단 저장 버튼 바 (좌측과 동일한 스타일 적용) */}
+          <div className="px-4 py-2 bg-[#f8fafc] border-b border-slate-300 flex justify-end shrink-0">
+            <button className="bg-[#0066e6] hover:bg-[#0055c2] text-white text-xs font-semibold px-5 py-1.5 rounded-lg shadow-xs transition-colors whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1.5">
               <Save className="w-3.5 h-3.5 text-white" /> 저장
             </button>
           </div>
@@ -190,10 +190,10 @@ export default function StockDayContent() {
             <table className="w-full text-left border-collapse text-[12px]">
               <thead className="sticky top-0 z-10 bg-[#f1f5f9] text-slate-700 font-semibold border-b border-slate-300">
                 <tr>
-                  <th className="py-2 px-3 text-center border-r border-slate-300 w-28">배당기준일</th>
-                  <th className="py-2 px-3 text-center border-r border-slate-300 w-28">배당지급일</th>
+                  <th className="py-2 px-3 text-center border-r border-slate-300 w-24">배당기준일</th>
+                  <th className="py-2 px-3 text-center border-r border-slate-300 w-24">배당지급일</th>
                   <th className="py-2 px-3 text-right border-r border-slate-300 w-24">배당지급액</th>
-                  <th className="py-2 px-3 text-center border-r border-slate-300 w-28">배당기준일_변경</th>
+                  <th className="py-2 px-3 text-center border-r border-slate-300 w-28">배당기준년</th>
                   <th className="py-2 px-3 text-right">배당기준가격</th>
                 </tr>
               </thead>
